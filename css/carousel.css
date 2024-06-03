@@ -1,0 +1,482 @@
+section {
+  background: #F4F4F4;
+  padding: 0px 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow:
+  5px 5px 15px 5px rgba(0, 0.2, 0, 0.2) !important;
+
+  color: #F4F4F4; 
+}
+
+.container {
+  max-width: 1044px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.gradient{
+  background: transparent !important;
+}
+
+.carousel {
+  display: block;
+  text-align: left;
+  position: relative;
+  margin-bottom: 50px;
+}
+  .carousel label {
+    display: none; /* Hide the labels */
+}
+.carousel h3{
+  color: #F4F4F4;
+}
+
+/* General styles for thumbnails and checkboxes */
+.carousel__thumbnails li {
+  position: relative; 
+}
+
+.carousel__thumbnails input[type="radio"] {
+  position: absolute; /* Position the radio buttons absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide the actual radio button */
+  cursor: pointer;
+}
+
+.carousel__thumbnails input[type="radio"]:checked + label {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5); 
+  border-radius: 10px !important; 
+}
+
+.carousel__thumbnails label {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__thumbnails img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.carousel__thumbnails li {
+  flex: 1 1 auto;
+  max-width: calc((100% / 6) - 20px);
+  margin: 0 10px;
+  transition: all 300ms ease-in-out;
+}
+
+.carousel__thumbnails label:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+
+.carousel__thumbnails label > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__thumbnails label:hover, .carousel__thumbnails label:focus {
+  cursor: pointer;
+}
+
+.carousel__thumbnails label:hover img, .carousel__thumbnails label:focus img {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-in-out;
+}
+
+.carousel > input {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 100%; /* Set height to match thumbnail image */
+  width: 100%; /* Set width to match thumbnail image */
+  margin: 0; /* Remove negative margin */
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  opacity: 0; /* Hide the checkbox */
+  
+}
+
+.carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -500%;
+}
+
+.carousel > input:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -400%;
+}
+
+.carousel > input:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -300%;
+}
+
+.carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -200%;
+}
+
+.carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -100%;
+}
+
+.carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: 0%;
+}
+
+/* Specific styles for checked input on small screens */
+.carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1),
+.carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2),
+.carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3),
+.carousel > input:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4),
+.carousel > input:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5),
+.carousel > input:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  margin-top: 0;
+}
+
+.carousel__slides {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.carousel__slide {
+  position: relative;
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+  vertical-align: top;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+#project-name {
+  font-size: 24px;
+  margin-top: 20px; /* Increase top margin */
+  padding-top: 20px; /* Increase top padding */
+  text-align:left;
+  color: #ffffff; /* Adjust the color as needed */
+}
+
+
+
+
+.carousel__slide div {
+  position: relative;
+  width: 100%;
+}
+
+.carousel__slide div:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 66.6667%; /* Maintain aspect ratio */
+}
+
+.carousel__slide div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+.carousel__slide img {
+  display: block;
+  flex: 1 1 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel__slide figure {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.carousel__slide figcaption {
+  align-self: flex-end;
+  padding: 20px 20px 0 20px;
+  flex: 0 0 auto;
+  width: 25%;
+  min-width: 150px;
+}
+
+.carousel__slide .credit {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.carousel__slide.scrollable {
+  overflow-y: scroll;
+}
+
+.carousel__thumbnails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin: 0 -10px;
+}
+
+.carousel__slides + .carousel__thumbnails {
+  margin-top: 20px;
+}
+
+
+
+.carousel__indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; /* Adjust this to position the indicators slightly higher */
+  padding-bottom: 20px !important; 
+  list-style: none;
+  padding: 0;
+}
+
+.carousel__indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.5), rgba(0, 128, 0, 0.5)); /* Radial gradient in green */
+  box-shadow: 0 0 3px rgba(0, 255, 0, 0); /* Reduce glow effect */
+  margin: 0 5px;
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.carousel__indicators li.active {
+  transform: scale(1.3); 
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.1); 
+}
+
+
+    /* Badge css */
+
+    
+    .htb_font {
+      font-family: "Roboto", monospace;
+  }
+  
+  .htb_nickname {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+  }
+  
+  .htb_points {
+      color: #56C0E0;
+      font-size: 10px;
+  }
+  
+  .htb_respect {
+      color: #f7af3e;
+      font-size: 10px;
+  }
+  
+  .htb_ranking {
+      color: #ffffff;
+      font-size: 10px;
+  }
+  
+  .htb_line {
+      line-height: 12px;
+      margin: 0px;
+      padding: 0px;
+  }
+  
+  .htb_link {
+      color: #9acc14;
+      font-size: 0.6em;
+      text-decoration: none;
+  }
+  
+  .htb_link:hover {
+      color: #9acc14;
+      font-size: 0.6em;
+      text-decoration: underline;
+  }
+  
+  .htb_link:visited {
+      color: #9acc14;
+  }
+  
+  .htb_rank{
+      color: #ffffff;
+      font-size: 11px;
+  }
+  
+  .profile-box {
+    width: 249px;
+    height: 58px;
+    background-color: #343c41;
+    border-top-left-radius: 50px; /* Adjust the value as needed */
+    border-bottom-left-radius: 50px; /* Adjust the value as needed */
+    text-align: left;
+    background-image: url(https://www.hackthebox.com/images/icon20.png);
+    background-position: right 5px bottom 5px;
+    background-repeat: no-repeat;
+}
+
+  
+  .profile-image img {
+      width: 58px;
+      height: 52px;
+      border-radius: 50px;
+      float: left;
+      margin-top: 5px;
+      margin-left: 5px;
+  }
+  
+  .profile-details {
+      float: left;
+      height: 40px;
+      padding-left: 4px;
+      margin-top: 5px;
+  }
+
+
+
+  .badges {
+    padding: 20px;
+}
+
+.text-6 {
+    font-size: 24px;
+}
+
+
+/* Small screen styles */
+@media (max-width: 767px) {
+  .carousel__slide {
+    flex-direction: column;
+  }
+  .carousel__slide figure {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel__slide figcaption {
+    width: 100%;
+    min-width: auto;
+    padding: 10px;
+  }
+  .carousel__slide .credit {
+    display: none;
+  }
+  .carousel__thumbnails {
+    margin: 0; 
+  }
+  .carousel__thumbnails li {
+    max-width: calc((100% / 4) - 10px); 
+    margin: 0 5px;
+    height: auto;
+    padding-top: 75%; 
+  }
+  .carousel__slide div:before {
+    padding-top: 56.25%; 
+  }
+
+}
+
+/* Small screen styles */
+@media (max-width: 767px) {
+  .carousel__thumbnails {
+    display: none;
+  }
+
+  .carousel__thumbnails input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 255, 0.5); /* Adjust the box shadow for smaller screens */
+    border-radius: 10px !important; /* Ensure the border radius matches the thumbnail image */
+  }
+
+  .carousel__thumbnails label {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain aspect ratio */
+  }
+
+  .carousel__thumbnails label > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel > input {
+    height: 100%; /* Ensure the height is 100% to match the thumbnail image */
+    width: 100%; /* Ensure the width is 100% to match the thumbnail image */
+  }
+}
+
+
+@media (min-width: 768px) {
+    .badges {
+        padding: 40px;
+    }
+
+    .text-6 {
+        font-size: 36px;
+    }
+
+    .profile-box {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-details {
+        margin-left: 20px;
+        text-align: left;
+    }
+    .badge-container {
+      flex-direction: row;
+  }
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  #project-name {
+    font-size: 20px; 
+    margin-top: 15px; 
+    padding-top: 15px; 
+  }
+}
+
+@media (max-width: 480px) {
+  #project-name {
+    font-size: 18px; 
+    margin-top: 10px; 
+    padding-top: 10px; 
+  }
+}
+  
+
